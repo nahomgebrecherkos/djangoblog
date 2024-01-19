@@ -59,7 +59,10 @@ Details{%endblock%} {% load crispy_forms_tags %} {% block content%}
 							class="card card-body"
 						>
 							{% for comment in post.comment_set.all %}
-							<p class="text-justify">{{comment.content}}</p>
+							<p class="text-justify">
+								{{comment.user.username}}: {{comment.content}}
+							</p>
+							<hr />
 							{% endfor %}
 						</div>
 					</div>
